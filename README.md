@@ -1,89 +1,176 @@
-# 💸 App de Organização de Finanças Pessoais com Vibe Coding
+# 💸 App de Organização Financeira da Claudia com Vibe Coding
 
-Aprenda a **criar soluções com IA** de forma criativa, guiando ferramentas como o **Copilot** e o **Lovable** com uma comunicação simples e natural. O foco é desenvolver o conceito de um **App de Organização de Finanças Pessoais**, mas, acima de tudo, aprender o **jeito Vibe de programar com IA**.
+PRD refinado no Copilot Web
 
-## ✨ O que é Vibe Coding
+```
+# PRD – App Porquinho (versão enxuta)
 
-**Vibe Coding** é uma forma leve e criativa de desenvolver com IA, baseada em **conversas naturais e bem estruturadas**. Você não precisa escrever código linha por linha. Em vez disso, aprende a **guiar a IA** descrevendo suas ideias de forma clara, com **intenção e contexto**. Em outras palavras:
+## 1. Visão Geral
 
-> Você mostra a vibe da sua ideia e a IA transforma em solução (ou em um caminho para ela).
+O Porquinho é um aplicativo mobile de controle financeiro pessoal focado em simplicidade, rapidez e baixo esforço cognitivo. O app permite que usuários registrem gastos e receitas do dia a dia em poucos segundos, entendam onde estão gastando (categorias) e como estão pagando (meio de pagamento). O app também sugere automaticamente a categoria do gasto para reduzir fricção, mantendo sempre a possibilidade de correção pelo usuário.
 
-## 🎯 Desafio
+## 2. Problema a ser Resolvido
 
-Problema: Muitas pessoas não conseguem manter um controle financeiro porque os aplicativos exigem muita entrada de dados manual, e a criação de orçamentos é vista como algo tedioso. 
+Muitas pessoas querem controlar seus gastos, mas desistem por falta de tempo, excesso de complexidade e jornadas longas em aplicativos financeiros. Além disso, é comum não ter clareza sobre:
 
-Precisamos de uma solução que permita **controlar as finanças por meio de uma conversa simples**, com **agentes de IA** capazes de criar **planos de economia personalizados e automatizados**. Você deve utilizar as ideias de **Vibe Coding** e **MVP (Produto Mínimo Viável)** para desenvolver o **conceito de um aplicativo** que resolva o problema citado.
+- Para onde o dinheiro está indo (categorias)
+- Como as despesas estão sendo pagas (dinheiro, PIX, cartão)
 
-> [!IMPORTANT]
-> Você **não precisa construir o código**! O foco está em **usar a IA como sua parceira criativa**, transformando boas ideias e prompts em conceitos funcionais que simulam um produto real.
+O Porquinho busca resolver essas dores oferecendo registro rápido, visualizações simples e insights básicos, sem exigir conhecimento financeiro.
 
-## 🪄 Etapas do Desafio
+## 3. Objetivos do Produto
 
-### 1. Saber o que Pedir é a Chave! Otimize seus Prompts!
+Objetivo principal:
 
-Antes de pedir para a IA "criar um app", é importante definir com clareza o que você quer construir e por quê. Para isso, você vai criar um **PRD (Product Requirements Document)** simplificado, uma especificação que serve como _briefing_ para a IA entender sua ideia.
+- Ajudar pessoas a controlar gastos e receitas do dia a dia, identificando gargalos e oportunidades de economia de forma simples e prática.
 
-Um bom PRD deve descrever o problema, quem será beneficiado, as principais funcionalidades e o que você espera que a IA entregue. Use o modelo abaixo como ponto de partida e adapte conforme o seu estilo:
+Objetivos secundários:
 
-```txt
-# Contexto
-Quero criar um aplicativo de Organização de Finanças Pessoais que funcione por meio de conversas com o usuário.  
-A ideia é facilitar o controle financeiro de forma simples e natural, sem formulários manuais ou planilhas complexas.
+- Criar hábito diário de registro financeiro
+- Reduzir fricção no registro (principalmente na escolha de categoria)
+- Aumentar consciência sobre o uso de meios de pagamento
+- Entregar clareza com o mínimo de passos possível
+ 
 
-# Problema
-Muitas pessoas desistem de controlar seus gastos porque os apps atuais exigem muita entrada manual e pouca personalização.  
-Quero resolver isso com uma experiência de conversa e recomendações automáticas de economia.
+## 4. Usuários
 
-# Público-Alvo
-Pessoas que querem começar a organizar suas finanças de forma prática e sem complicação, principalmente iniciantes.
+Perfil:
+- Pessoas físicas
+- Sem conhecimento financeiro avançado
+- Interessadas em controlar gastos do dia a dia de forma prática e rápida
 
-# Funcionalidades-Chave
-1. Registrar gastos via chat em linguagem natural.  
-2. Classificar automaticamente as transações.  
-3. Definir e acompanhar metas financeiras.  
-4. Receber dicas de economia do “Agente Financeiro”.  
-5. Visualizar relatórios simples e personalizados.
+Frequência:
 
-# Entregável da IA
-Gerar um plano de MVP com as principais telas, recursos necessários e um esboço de validação inicial.  
-Usar tom educativo e linguagem acessível, em português.
+- Uso diário, com possibilidade de múltiplos registros por dia
+
+## 5. Escopo do Produto
+
+Dentro do escopo:
+
+- Registro rápido de gastos
+- Registro de receitas
+- Seleção de meio de pagamento (Dinheiro, PIX, Cartão de crédito, Cartão de débito)
+- Sugestão automática de categoria (assistida e editável)
+- Resumo financeiro por período
+- Análise por categoria
+- Análise por meio de pagamento
+- Insights simples e compreensíveis
+
+Fora do escopo (nesta fase):
+
+- Integração com bancos/cartões
+- Planejamento financeiro avançado
+- Investimentos
+- Multiusuário/contas compartilhadas
+- Relatórios sofisticados e configurações complexas
+
+## 6. Requisitos Funcionais
+
+RF01 – Registro de gastos
+
+- O usuário deve conseguir registrar um gasto informando, no mínimo: valor, data, categoria e meio de pagamento.
+- A descrição do gasto é opcional, mas recomendada para melhorar a sugestão automática de categoria.
+
+RF02 – Seleção de meio de pagamento
+
+- O usuário deve selecionar o meio de pagamento da despesa com opções pré-definidas:
+  - Dinheiro
+  - PIX
+  - Cartão de crédito
+  - Cartão de débito
+- A seleção deve exigir o mínimo de toques possível.
+
+RF03 – Registro de receitas
+
+- O usuário deve conseguir registrar receitas (entradas) de forma simples (valor e data; tipo opcional).
+
+RF04 – Visualização de resumo financeiro
+
+- O app deve exibir resumo simples de gastos e receitas por período (ex.: diário, semanal, mensal), com totais e saldo simples. 
+
+RF05 – Análise por categoria
+
+- O app deve permitir visualizar gastos agrupados por categoria, destacando as categorias com maior impacto.
+ 
+RF06 – Análise por meio de pagamento
+
+- O app deve permitir visualizar e analisar os gastos agrupados por meio de pagamento (valores e/ou percentuais por Dinheiro, PIX, Crédito e Débito).
+
+RF07 – Insights automáticos
+
+- O app deve apresentar insights curtos e compreensíveis com base nos dados registrados (ex.: “A maior parte dos gastos do mês foi no cartão de crédito”).
+- Os insights devem evitar termos técnicos e manter foco em ações simples.
+
+RF08 – Sugestão automática de categoria (assistida)
+
+- Ao registrar uma despesa, o app deve sugerir automaticamente uma categoria com base em:
+  - texto informado na descrição (quando houver) e/ou
+  - histórico de escolhas do usuário (últimas categorias usadas para descrições semelhantes ou padrão do usuário).
+- O usuário deve conseguir aceitar a sugestão com 1 toque ou alterar facilmente.
+- Se não houver confiança suficiente na sugestão, o app pode sugerir “Outros” ou a última categoria utilizada.
+
+## 7. Requisitos Não Funcionais
+
+- Usabilidade: interface simples e intuitiva; poucos cliques; fluxo de registro rápido.
+- Performance: resposta rápida em registro e visualizações.
+- Segurança e privacidade: proteção dos dados do usuário e aderência à LGPD (princípios de minimização e transparência).
+- Compatibilidade: aplicativo mobile (Android e/ou iOS).
+
+## 8. Métricas de Sucesso (iniciais/sugeridas)
+
+- Retenção de 7 e 30 dias
+- Média de registros de despesas por usuário/dia
+- Percentual de gastos com meio de pagamento informado
+- Taxa de aceitação da sugestão automática de categoria (aceitou vs. alterou)
+- Tempo médio para registrar um gasto
+- Feedback qualitativo sobre simplicidade e utilidade (ex.: “me ajudou a entender meus gastos?”)
+
+## 9. Dependências e Riscos
+
+Dependências:
+- Definição de UX/UI focada em simplicidade
+- Definição de categorias padrão e regras iniciais de sugestão (palavras-chave e/ou histórico)
+
+Riscos:
+- Sugestões de categoria com baixa precisão gerarem frustração
+- Aumento de fricção no registro por excesso de campos/opções
+- Insights pouco claros ou pouco acionáveis
+- Falta de diferenciação caso a experiência não seja realmente mais simples
+
+## 10. Critérios de Aceite
+- O usuário consegue registrar um gasto em poucos segundos.
+- O meio de pagamento é selecionável com facilidade e clareza.
+- A sugestão automática de categoria aparece e pode ser alterada rapidamente.
+- O usuário consegue visualizar gastos por categoria e por meio de pagamento de forma simples.
+- A experiência geral do app permanece prática, com baixo esforço e sem complexidade desnecessária.
+
+
 ```
 
-Depois de preencher o modelo, use o Copilot Web para revisar e melhorar o seu prompt antes de ir ao Lovable. A ideia é lapidar o texto até que ele fique claro, direto e reflita exatamente a sua intenção.
+- Prints ou pequenos vídeos das interações com a IA;
+  Crie um protótipo de app mobile chamado “Porquinho”, focado em controle financeiro pessoal simples e rápido.
 
-> [!TIP]
-> Pense no PRD/Prompt como “o briefing que a IA precisa para entender sua vibe”. Portanto, quanto mais claro e intencional for o texto, mais próximas do ideal serão as respostas da IA.
+ 
+<img width="1298" height="585" alt="image" src="https://github.com/user-attachments/assets/87a51c0b-5091-4825-94e0-572d7b721dde" />
 
-### 2. Explorando o Lovable na Prática
 
-Com seu PRD pronto e revisado, é hora de colocar a IA em ação. Abra o Lovable, cole seu prompt completo e peça o plano inicial do MVP do seu aplicativo. Como o plano gratuito limita você a 5 interações por dia, seja estratégico:
-- Faça perguntas diretas e construtivas, como “crie o fluxo de telas com base nas funcionalidades listadas” ou “gere uma versão resumida do plano de MVP”;
-- Priorize clareza nas instruções para aproveitar ao máximo cada resposta;
 
-Durante essa etapa, você pode orientar a IA para três entregas principais:
-1. Agente Financeiro: defina o comportamento e o tom de voz de um consultor financeiro pessoal, alinhado ao público e objetivo do app.
-2. Fluxo de Telas: peça à IA para gerar o fluxo conceitual de telas com base nas funcionalidades descritas no PRD, simulando a interação por conversa.
-3. Plano de MVP: solicite um resumo das 5 funcionalidades principais, dos recursos necessários e um plano de validação inicial (como medir se o app cumpre seu propósito).
 
-> [!TIP]
-> Se preferir, você pode fazer tudo com o **Copilot**. O importante é exercitar a habilidade de transformar intenções em instruções claras e testar os limites da IA como parceira criativa.
+ 
 
-### 3. Entregando o Desafio na DIO
 
-Finalize seu projeto criando um **repositório no GitHub** (pode ser um **fork** deste).  
-No README do seu repositório, inclua:
+- Um resumo do que o seu **App de Finanças Pessoais** faz;
+  O Porquinho é um aplicativo mobile de controle financeiro pessoal focado em simplicidade, rapidez e baixo esforço cognitivo. O app permite que usuários registrem gastos e receitas do dia a dia em poucos segundos, entendam onde estão gastando (categorias) e como estão pagando (meio de pagamento). O app também sugere automaticamente a categoria do gasto para reduzir fricção, mantendo sempre a possibilidade de correção pelo usuário.
+  
+## reflexão sobre o processo:
+###  - O que funcionou bem?  
+  tudo funcionou bem. usar o copilot web previamnte e fazer todos os ajustes por la, é uma ótima ideia. Os ajustes são fáceis e rápidos de serem feitos.
+### - o que não funcionou como o esperado?
+a versao gratuita tem poucas possibilidaes de interação.
 
-- Seu **prompt final** (PRD);  
-- Prints ou pequenos vídeos das interações com a IA;  
-- Um resumo do que o seu **App de Finanças Pessoais** faz;  
-- Uma breve **reflexão sobre o processo**:
-  - O que funcionou bem?  
-  - O que não funcionou como o esperado?  
-  - O que aprendeu sobre conversar com IAs?
+## - O que aprendeu sobre conversar com IAs?
+  - Foi simples e objetivo.Basta ter clareza do que se quer e conversar normalmente com um amigo. Precisa de detalhes e clareza nas informações.
+  - 
 
-> [!TIP]
-> Publique seu repositório e compartilhe o link na plataforma da DIO! Sua entrega é a prova de que você domina o raciocínio de Vibe Coding, mesmo sem escrever uma única linha de código.
 
-## 💬 Conclusão
 
-Vibe Coding é sobre clareza, curiosidade e criatividade, não sobre perfeição técnica. O verdadeiro objetivo aqui é aprender a pensar junto com a IA, transformando ideias em conceitos reais e enxergando a tecnologia como uma extensão do seu raciocínio criativo. Cada interação é um experimento, quanto mais clara for sua intenção, mais surpreendente será o resultado.
